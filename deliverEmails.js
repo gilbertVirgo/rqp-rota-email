@@ -1,9 +1,6 @@
 require("dotenv").config();
 
 const { EMAIL, APP_PASSWORD } = process.env;
-const areChordSheetsAvailable = require("./areChordSheetsAvailable");
-const getContacts = require("./getContacts");
-const getSetlists = require("./getSetlists");
 const prepareEmails = require("./prepareEmails");
 
 const send = require("gmail-send")({
