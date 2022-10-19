@@ -1,0 +1,32 @@
+body {
+    font-family: "Helvetica Neue", Arial;
+    font-size: 16px;
+}
+.container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px;
+    box-sizing: border-box;
+}
+.dropdown-button::before {
+    content: "▼";
+}
+.dropdown.active .dropdown-button::before {
+    content: "▲";
+}
+.dropdown.active .dropdown-contents {
+    display: block;
+}
+.dropdown-button {
+    cursor: pointer;
+}
+.dropdown-button:hover {
+    text-decoration: underline;
+}
+.dropdown-contents {
+    padding: 15px 0;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    display: none;
+}

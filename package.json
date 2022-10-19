@@ -1,0 +1,30 @@
+{
+	"name": "rqp-rota-email",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/gilbertVirgo/rqp-rota-email.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/gilbertVirgo/rqp-rota-email/issues"
+	},
+	"homepage": "https://github.com/gilbertVirgo/rqp-rota-email#readme",
+	"dependencies": {
+		"cors": "^2.8.5",
+		"dotenv": "^16.0.3",
+		"express": "^4.18.2",
+		"gmail-send": "^1.8.14",
+		"google-spreadsheet": "^3.3.0",
+		"json-beautify": "^1.1.1",
+		"luxon": "^3.0.4",
+		"moment": "^2.29.4"
+	}
+}
