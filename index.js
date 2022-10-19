@@ -22,7 +22,6 @@ server.get("/review", async (req, res, next) => {
 });
 
 server.use((req, res, next) => {
-	console.log(res.locals.message);
 	res.send(`
 		<h1>Success</h1>
 		${res.locals.message}
