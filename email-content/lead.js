@@ -8,6 +8,13 @@ module.exports = ({ Name, thisWeek, Date, Songs, ...setlist }) => {
 		(title) => title[0] === "*" && setlist[title] === Name
 	);
 
+	const supporters = Object.keys(setlist).filter(
+		(title) =>
+			title[0] === "*" &&
+			setlist[title] !== Name &&
+			setlist[title] !== "N/A"
+	);
+
 	return `
 <p>Hey ${Name},</p>
 <p>Just a reminder that I've got you down to lead worship at Redeemer ${
@@ -23,6 +30,18 @@ ${
 		  )}</strong>.</p><br/>`
 		: ""
 } 
+
+${
+	supporters.length
+		? `<p>Supporting, you'll have:</p>
+<ul>
+	${supporters
+		.map((inst) => `<li><strong>${inst}</strong>: ${setlist[inst]}</li>`)
+		.join("")}
+</ul>
+`
+		: ""
+}
 
 ${
 	// Two weeks in advance.
