@@ -6,7 +6,7 @@ module.exports = async (sheet) => {
 	let index = rows.length,
 		thisSat;
 
-	while (moment().isBefore(moment(rows[--index].Date))) {
+	while (new Date() < new Date(rows[--index].Date)) {
 		thisSat = rows[index];
 	}
 
