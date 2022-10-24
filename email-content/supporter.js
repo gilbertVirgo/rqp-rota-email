@@ -1,14 +1,9 @@
 const footer = require("./footer");
 
-module.exports = ({
-	Name,
-	thisWeek,
-	Date,
-	Songs,
-	Lead,
-	"Chord Sheets": ChordSheets,
-	...setlist
-}) => {
+const chordSheetsDriveURL =
+	"https://drive.google.com/drive/folders/1rIVol4zM_IIMDhvGa5NmA5vcEPi8ZNU-";
+
+module.exports = ({ Name, thisWeek, Date, Songs, Lead, ...setlist }) => {
 	const roles = Object.keys(setlist).filter(
 		(title) => title[0] === "*" && setlist[title] === Name
 	);
@@ -32,7 +27,7 @@ ${
 			.map((songTitle) => `<li>${songTitle}</li>`)
 			.join("")}
 	</ul>
-	<p>Please click <a href="${ChordSheets}">here</a> to find the chord sheets.</p>
+	<p>Please click <a href="${chordSheetsDriveURL}">here</a> to find the chord sheets.</p>
 	<br/>`
 		: `<p>If you'd like to get ahead with practicing/rehearsing for next week's songs, please get in touch with <strong>${Lead}</strong> who is leading ${
 				thisWeek ? "this" : "next"

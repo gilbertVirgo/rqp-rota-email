@@ -33,7 +33,7 @@ module.exports = async function () {
 	const { thisSat, nextSat } = await getSetlists(sheets.setlists);
 
 	// Safeguarding
-	const essentials = ["Lead", "Chord Sheets", "Songs"];
+	const essentials = ["Lead", "Songs"];
 
 	for (const e of essentials) {
 		if (!thisSat[e] || thisSat[e] === "N/A")

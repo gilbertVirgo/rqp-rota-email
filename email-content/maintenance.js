@@ -1,7 +1,10 @@
 const beautify = require("json-beautify");
 
+const chordSheetsDriveURL =
+	"https://drive.google.com/drive/folders/1rIVol4zM_IIMDhvGa5NmA5vcEPi8ZNU-";
+
 module.exports = ({ thisSat, nextSat }) => {
-	const neededKeys = ["Date", "Lead", "Songs", "Chord Sheets", "Notes"];
+	const neededKeys = ["Date", "Lead", "Songs", "Notes"];
 
 	let distilled = {
 		thisSat: {},
@@ -56,6 +59,7 @@ module.exports = ({ thisSat, nextSat }) => {
 			)
 			.join("")}
     </tbody>
-</table>
+</table><br/>
+<p>Chord sheets to be found <a href="${chordSheetsDriveURL}">here</a>.</p>
 `;
 };

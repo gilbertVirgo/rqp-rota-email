@@ -1,3 +1,6 @@
+const chordSheetsDriveURL =
+	"https://drive.google.com/drive/folders/1rIVol4zM_IIMDhvGa5NmA5vcEPi8ZNU-";
+
 module.exports = ({ thisSat, nextSat }) => `
 <p>Hey Thomas/Luiz,</p>
 <p>Here's who's on for worship this week:</p>
@@ -8,7 +11,6 @@ module.exports = ({ thisSat, nextSat }) => `
 		.map((key) => `<li><strong>${key}:</strong> ${thisSat[key]}</li>`)
 		.join("")}
 </ul>
-<p>Click <a href="${thisSat["Chord Sheets"]}">here</a> for chord sheets.</p>
 <br/>
 
 <p>Here's who's on for worship next week:</p>
@@ -19,7 +21,9 @@ module.exports = ({ thisSat, nextSat }) => `
 		.map((key) => `<li><strong>${key}:</strong> ${nextSat[key]}</li>`)
 		.join("")}
 </ul>
-<p>Click <a href="${nextSat["Chord Sheets"]}">here</a> for chord sheets.</p>
+<br/>
+
+<p>Click <a href="${chordSheetsDriveURL}">here</a> for chord sheets.</p>
 <br/>
 
 <p>Please test the links, and/or let me know if anything is wrong with the email formatting/content.</p>

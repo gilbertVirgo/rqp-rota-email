@@ -1,5 +1,3 @@
-/// MAKE DATES FRIENDLY
-
 require("dotenv").config();
 
 const express = require("express");
