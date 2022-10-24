@@ -66,10 +66,13 @@ module.exports = async function () {
 	});
 
 	// This week's supporters
+	let doNotEmailAgain = [];
 	Object.keys(thisSat)
 		.filter((t) => t[0] === "*")
 		.forEach((role) => {
 			const contact = contacts.find(({ Name }) => Name === thisSat[role]);
+
+			if (doNotEmailAgain.includes(contact.Email)) return;
 
 			emails.push({
 				to: contact.Email,
@@ -79,13 +82,18 @@ module.exports = async function () {
 					...thisSat,
 				}),
 			});
+
+			doNotEmailAgain.push(contact.Email);
 		});
 
 	// Next week's supporters
+	doNotEmailAgain = [];
 	Object.keys(nextSat)
 		.filter((t) => t[0] === "*")
 		.forEach((role) => {
 			const contact = contacts.find(({ Name }) => Name === nextSat[role]);
+
+			if (doNotEmailAgain.includes(contact.Email)) return;
 
 			emails.push({
 				to: contact.Email,
@@ -95,6 +103,8 @@ module.exports = async function () {
 					...nextSat,
 				}),
 			});
+
+			doNotEmailAgain.push(contact.Email);
 		});
 
 	// Managers
