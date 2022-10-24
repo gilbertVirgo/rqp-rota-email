@@ -7,7 +7,7 @@ module.exports = ({ thisSat, nextSat }) => `
 <ul>
     <li><strong>Lead:</strong> ${thisSat.Lead}</li>
     ${Object.keys(thisSat)
-		.filter((title) => title[0] === "*")
+		.filter((title) => title[0] === "*" && thisSat[title] !== "N/A")
 		.map((key) => `<li><strong>${key}:</strong> ${thisSat[key]}</li>`)
 		.join("")}
 </ul>
@@ -17,7 +17,7 @@ module.exports = ({ thisSat, nextSat }) => `
 <ul>
     <li><strong>Lead:</strong> ${nextSat.Lead}</li>
     ${Object.keys(nextSat)
-		.filter((title) => title[0] === "*")
+		.filter((title) => title[0] === "*" && nextSat[title] !== "N/A")
 		.map((key) => `<li><strong>${key}:</strong> ${nextSat[key]}</li>`)
 		.join("")}
 </ul>
