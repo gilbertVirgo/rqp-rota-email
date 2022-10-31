@@ -7,7 +7,7 @@ module.exports = async () => {
 
 	return `
 <style>
-${fs.readFileSync(path.join(__dirname, "preview-styles.css"))}
+${fs.readFileSync(path.join(__dirname, "review-styles.css"))}
 </style>
 <div class="container">
     ${emails
