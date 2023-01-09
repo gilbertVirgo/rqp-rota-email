@@ -41,7 +41,7 @@ module.exports = async function () {
 	}
 
 	if (!nextSat.Lead || nextSat.Lead === "N/A")
-		throw new Error(`No lead set for next week.`);
+		throw new Error(`No Lead set for next week.`);
 
 	const emails = [];
 
@@ -66,7 +66,10 @@ module.exports = async function () {
 	});
 
 	// This week's supporters
-	let doNotEmailAgain = [];
+	let doNotEmailAgain = [
+		contacts.find(({ Name }) => Name === thisSat.Lead).Email,
+	];
+
 	Object.keys(thisSat)
 		.filter((t) => t[0] === "*")
 		.forEach((role) => {
@@ -87,7 +90,10 @@ module.exports = async function () {
 		});
 
 	// Next week's supporters
-	doNotEmailAgain = [];
+	doNotEmailAgain = [
+		contacts.find(({ Name }) => Name === nextSat.Lead).Email,
+	];
+
 	Object.keys(nextSat)
 		.filter((t) => t[0] === "*")
 		.forEach((role) => {
